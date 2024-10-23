@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "project"
-version = "0.1.2"
+name = "ping-monitor"
+version = "v0.1.0"
 description = ""
 authors = ["Kodai YAMASHITA <nglcobdai@gmail.com>"]
 readme = "README.md"
