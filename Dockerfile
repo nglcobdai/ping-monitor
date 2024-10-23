@@ -40,6 +40,3 @@ RUN apt-get update && apt-get install -y \
 COPY app/cron_job /etc/cron.d/cron_job
 RUN chmod 0644 /etc/cron.d/cron_job
 RUN crontab /etc/cron.d/cron_job
-
-COPY ./app/monitor.sh /root/workspace/app/monitor.sh
-RUN chmod +x /root/workspace/app/monitor.sh
