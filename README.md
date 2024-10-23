@@ -1,4 +1,6 @@
-# python
+# pint-monitor
+
+`ping-monitor` is a tool to monitor the availability of a server by pinging it.
 
 |                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -18,27 +20,37 @@
 ### 1. Clone Repository
 
 ```sh
-$ git clone git@github.com:nglcobdai/python-template.git
-$ cd python-template
+$ git clone git@github.com:nglcobdai/ping-monitor.git
+$ cd ping-monitor
 ```
 
 ### 2. Create .env file
 
-- copy .env.example to .env
+#### 2.1. copy .env.example to .env
 
 ```sh
 $ cp .env{.example,}
 ```
 
-### 3. Docker Build & Run
+#### 2.2. edit .env
+
+| Key             | Description                                                                        |
+| --------------- | ---------------------------------------------------------------------------------- |
+| IP_ADDRESS      | IP address to ping                                                                 |
+| SLACK_API_TOKEN | [Slack API Token](https://nglcobdai.github.io/nglcobdai-utils/Installation/Slack/) |
+| SLACK_CHANNEL   | [Slack Channel](https://nglcobdai.github.io/nglcobdai-utils/Installation/Slack/)   |
+| DATADRIVE       | project directory for output log                                                   |
+
+### 3. Docker Build
 
 ```sh
 $ docker-compose build --no-cache
-$ docker-compose run --rm project
 ```
 
-### 4. Run Python Script
+### 4. cron start
+
+pint-monitor is running on background by cron.
 
 ```sh
-$ python app/main.py
+$ docker-compose up -d
 ```

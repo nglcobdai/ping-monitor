@@ -1,13 +1,14 @@
 version: "3.3"
 services:
-  project:
+  app:
     build:
       context: .
       dockerfile: ./Dockerfile
     volumes:
       - .:/root/workspace
+      - ${DATADRIVE}:${DATADRIVE}
     env_file:
       - .env
     tty: true # retain container up
-    command: /bin/bash
+    command: sh -c "service cron start && /bin/bash"
     shm_size: ${DOCKER_SHM_SIZE}
