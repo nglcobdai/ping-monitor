@@ -42,8 +42,8 @@ class Monitor:
                 self.logger.warning(f"Warning: {self.ip_address} is Unreachable.")
                 msg = f"<!channel> {self.logger.get_log_message()}"
             else:
-                msg = f"Success: {self.ip_address} is Reachable."
-                self.logger.info(msg)
+                self.logger.info(f"Success: {self.ip_address} is Reachable.")
+                msg = self.logger.get_log_message()
             slack.post_text(channel=settings.SLACK_CHANNEL, text=msg)
 
         except Exception as e:
