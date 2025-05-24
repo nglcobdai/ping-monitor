@@ -1,5 +1,5 @@
-from app.src import settings, logger, datadrive
-from app.src.monitor import monitoring, MonitorInfo
+from app.src import datadrive, logger, settings
+from app.src.monitor import MonitorInfo, monitoring
 
 
 def main():
